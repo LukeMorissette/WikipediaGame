@@ -11,6 +11,7 @@ My proposed improvement for this program is to use multiple threads and run mult
 The program will calculate the cosine similarity for each website. Then it will find the difference between the two vectors and multiply it by a varibale to make the value a suitable size let's call this value _diff_. Then the program will run through a for loop that will create a certain amount of midpoints based on the size of _diff_. Each time a midpoint is defined a new thread will be created and the _find_path_ method will be called.
 
 ![Silly Drawing](./Silly_Drawing.jpg)
+![Stepping Stones](./Stepping_Stones.jpg)
 
 ## Pros :
 
