@@ -1,7 +1,7 @@
 # Wikipedia Game Improvement Proposal (WGIP)
 
 ## Authors
-- Author: Luke Morissette
+- Author: Luke Morissette and Kevan Parang
 
 ## Improvement: Stepping Stones
 
