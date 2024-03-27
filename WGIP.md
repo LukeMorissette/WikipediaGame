@@ -3,26 +3,27 @@
 ## Authors
 - Author: Luke Morissette and Kevan Parang
 
-## Milestones
-# Milestone 1: Data Preparation and Preprocessing
+# Milestones
+## Milestone 1: Data Preparation and Preprocessing
 Obtain a dump of Wikipedia articles or use an existing dataset
 Preprocess the text data (tokenization, stopword removal, stemming/lemmatization)
 Train a Word2Vec model on the preprocessed Wikipedia data using the gensim library
 Calculate and store the cosine similarity between each pair of Wikipedia articles
-# Milestone 2: Parallel Path Finding Implementation 
+
+## Milestone 2: Parallel Path Finding Implementation 
 Implement the find_path function to perform a breadth-first search between two Wikipedia articles
 Develop the full_path function to calculate the cosine similarity between the start and end articles
 Determine the number of midpoints based on the cosine similarity difference
 Create and manage threads for parallel path finding between the midpoints
 Collect and order the paths from the threads
 
-# Milestone 3: User Interface and Integration 
+## Milestone 3: User Interface and Integration 
 Create a user interface (e.g., command-line or web-based) to accept user input for the start and end articles
 Integrate the parallel path finding algorithm with the user interface
 Implement error handling and edge cases (e.g., articles not found in Wikipedia)
 Optimize the algorithm's performance and memory usage
 
-# Milestone 4: Testing and Documentation 
+## Milestone 4: Testing and Documentation 
 Write comprehensive unit tests for all functions and modules
 Test the application with various input scenarios and edge cases
 Document the code, algorithms, and usage instructions
