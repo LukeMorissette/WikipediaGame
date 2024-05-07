@@ -1,7 +1,6 @@
 # WikipediaGame
 
-<!--At the time of this writing available at http://192.168.16.72:5000/ from inside the Chapman network.-->
-At the time of this writing available at https://wikipiediagame.azurewebsites.net/ 
+
 ## Installation
 
 (these instructions should work under GNU/Linux and Macos and WSL)
@@ -9,28 +8,24 @@ At the time of this writing available at https://wikipiediagame.azurewebsites.ne
 Prerequisites: Python
 
 ```
-git clone https://github.com/alexhkurz/WikipediaGame.git
-cd WikipediaGame/server
-source setup.sh
-```
+git clone https://github.com/LukeMorissette/WikipediaGame.git
+cd WikipediaGame
 
-Starting the server:
 
 ```
-python server.py
+
 ```
 
-(For development one may want to use `watchmedo auto-restart -d . -p '*.py' -- python server.py`.)
+Starting the program:
 
-Play the game on [`localhost:5000`](http://127.0.0.1:5000/) (this link will only work after you started the server on your machine (watch the console in case the port number changed to eg `5001`)).
+```
+pip install -r requirements.txt
+python WordAnaylzer.py
+```
 
 ## Limitations
 
-- The UI works as expected only for chrome-based browsers (Chrome, Brave, ...).
-- Only tested for pages that are no further than two hops away. 
-- Only works for wikipedia pages.
-- Implemented via HTTP requests (no websocket connection between client and server).
-- Users are identified by IP adress (no cookies or sessions).
+- There is currently a bug were a sorting out when starting the program. 
 - ...
 
 ## Parameters
