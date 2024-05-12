@@ -12,20 +12,19 @@ git clone https://github.com/LukeMorissette/WikipediaGame.git
 cd WikipediaGame
 
 
-```
-
-```
-
 Starting the program:
 
 ```
 pip install -r requirements.txt
-python WordAnaylzer.py
+source venv/bin/activate
+python backlinks.py
+
 ```
 
 ## Limitations
 
-- There is currently a bug were a sorting out when starting the program. 
+- You may need to use `pip3` or `pip`.
+- You may need to use another env (/path/to/venv/Scripts/activate) if you are on Windows 
 - ...
 
 ## Parameters
@@ -45,6 +44,3 @@ python WordAnaylzer.py
 - `version1` computes the shortest path betwen two wikipedia pages
 - `version2` (=`main`) additionally displays all pages visited during the computation
 - `dev` will output the pages being visited in real time (under development)
-
-
-

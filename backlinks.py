@@ -1,13 +1,20 @@
-import requests
-import gensim
-import numpy as np
-import time
+"""
+Wikipedia Path Finder
+
+This script allows users to find a path between two Wikipedia articles using backlinks and breadth-first search.
+
+Usage:
+1. User provides a starting Wikipedia article.
+2. User provides a final Wikipedia article.
+3. The script finds a path between the two articles and prints the path along with the number of discovered pages and time taken.
+"""
+
 import requests
 from bs4 import BeautifulSoup
 import re
+import time
 
-
-
+# Function to retrieve backlinks for a given Wikipedia page
 def get_backlinks(page_title):
     S = requests.Session()
     URL = "https://en.wikipedia.org/w/api.php"
@@ -45,19 +52,16 @@ def get_backlinks(page_title):
 
     return backlinks
 
+# Function to retrieve links from a given Wikipedia page
 def get_links(page_url):
-    # print(f"Fetching page: {page_url}")
     response = requests.get(page_url)
-        # print(f"Finished fetching page: {page_url}")
     soup = BeautifulSoup(response.text, 'html.parser')
     from urllib.parse import urljoin
     all_links = [urljoin(page_url, a['href']) for a in soup.find_all('a', href=True) if '#' not in a['href']]
-        # print(f"All links found: {all_links}")
     links = [link for link in all_links if re.match(r'^https://en\.wikipedia\.org/wiki/[^:]*$', link) and '#' not in link]
-        # print(f"Found {len(links)} links on page: {page_url}")
     return links
 
-
+# Function to find a path between two Wikipedia articles
 def find_path(start_page, finish_page):
     start_time = time.time()
     name_url_part = start_page.replace(' ', '_')
@@ -73,30 +77,30 @@ def find_path(start_page, finish_page):
     backlinks.append(finish_link)
     print(finish_page)
 
-    # breadth first search
+    # Breadth-first search
     while queue:  
         (vertex, path, depth) = queue.pop(0)
-        for next in set(get_links(vertex)) - discovered:
-            if next in backlinks:
-                print(f"Found: {next}")
+        for next_page in set(get_links(vertex)) - discovered:
+            if next_page in backlinks:
+                print(f"Found: {next_page}")
                 logs.append(log)
                 logs.append(f"Discovered pages: {len(discovered)}")
                 end_time = time.time()
-                output = next
-                if next != finish_link:
+                output = next_page
+                if next_page != finish_link:
                     output += f", {finish_link}"
                 print(f"Path found: {path + [output]}")
                 print(f"Time taken: {end_time - start_time} seconds")
-                return path + [output], logs, len(discovered) # return with success
+                return path + [output], logs, len(discovered)  # Return with success
             else:
-                log = f"Adding link to queue: {next} (depth {depth})"
+                log = f"Adding link to queue: {next_page} (depth {depth})"
                 logs.append(log)
-                discovered.add(next)
-                queue.append((next, path + [next], depth + 1))
+                discovered.add(next_page)
+                queue.append((next_page, path + [next_page], depth + 1))
         logs.append(f"Discovered pages: {len(discovered)}")
 
-
-while(True):
+# Main loop to continuously prompt user for input and find paths
+while True:
     input1 = input('Please enter your starting article: ')
     input2 = input('Please enter your final: ')
     find_path(input1, input2)
