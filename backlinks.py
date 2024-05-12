@@ -13,6 +13,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import time
+import threading
 
 # Function to retrieve backlinks for a given Wikipedia page
 def get_backlinks(page_title):
@@ -52,6 +53,10 @@ def get_backlinks(page_title):
 
     return backlinks
 
+def find_path_threaded(start_page, finish_page):
+    thread = threading.Thread(target=find_path, args=(start_page, finish_page))
+    thread.start()
+
 # Function to retrieve links from a given Wikipedia page
 def get_links(page_url):
     response = requests.get(page_url)
@@ -61,6 +66,7 @@ def get_links(page_url):
     links = [link for link in all_links if re.match(r'^https://en\.wikipedia\.org/wiki/[^:]*$', link) and '#' not in link]
     return links
 
+# Function to find a path between two Wikipedia articles
 # Function to find a path between two Wikipedia articles
 def find_path(start_page, finish_page):
     start_time = time.time()
@@ -80,6 +86,7 @@ def find_path(start_page, finish_page):
     # Breadth-first search
     while queue:  
         (vertex, path, depth) = queue.pop(0)
+        log = ""  # Initialize log here
         for next_page in set(get_links(vertex)) - discovered:
             if next_page in backlinks:
                 print(f"Found: {next_page}")
@@ -98,9 +105,8 @@ def find_path(start_page, finish_page):
                 discovered.add(next_page)
                 queue.append((next_page, path + [next_page], depth + 1))
         logs.append(f"Discovered pages: {len(discovered)}")
-
-# Main loop to continuously prompt user for input and find paths
+        
 while True:
     input1 = input('Please enter your starting article: ')
     input2 = input('Please enter your final: ')
-    find_path(input1, input2)
+    find_path_threaded(input1, input2)

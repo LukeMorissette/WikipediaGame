@@ -3,9 +3,9 @@ The current implementation of the Wikipedia Path Finder script utilizes backlink
 
 ## Proposed Improvements
 
-### 1. Integration of Backlinks Caching
+### 1. Integration of Backlinks 
 #### Description:
-Implement a caching mechanism to store retrieved backlinks for Wikipedia pages. Caching will reduce the number of API requests and enhance the performance of the path-finding algorithm.
+Implement a mechanism to retrieve backlinks for Wikipedia pages. Caching will reduce the number of API requests and enhance the performance of the path-finding algorithm.
 
 #### Pseudo-Code:
 ```python
@@ -111,6 +111,6 @@ The proposed improvements to the Wikipedia Path Finder script aim to enhance its
 | Project Setup and Environment Preparation | Set up the development environment with necessary tools and libraries. Identify project dependencies. | 3 days        | Completed      | Yes      | Mar 28, 2024      |
 | Previous Work                           | Review and finalize previous work.                      | 7 days        | Completed      | Yes      | Thursday, April 4, 2024 |
 | Previous Work (BART AND WORDTOVEC IMPROVEMENT) | Enhance and optimize previous work related to BART and Word2Vec. | 3 weeks       | Completed      | Yes      | Thursday, April 25, 2024 |
-| Research and Implement Backtracking Improvements | Focus on implementing backtracking improvements for the new project direction. | 2 weeks       | Completed      | Yes      | Thursday, April 18, 2024 |
+| Research and Implement Backtracking Improvements | Focus on implementing backtracking improvements for the new project direction. Implement Threading. | 2 weeks       | Completed      | Yes      | Thursday, April 18, 2024 |
 | Integration and Testing                | Integrate all components with the new backtracking implementation and conduct testing. | 2 weeks       | Completed      | Yes      | Thursday, May 9, 2024 |
 | Code Cleanup and Submission            | Identify and implement code improvements. Comment the project for clarity and submit final version. | 1 week     | Pending        | No       | Friday, May 17, 2024 |
