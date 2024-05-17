@@ -113,4 +113,4 @@ The proposed improvements to the Wikipedia Path Finder script aim to enhance its
 | Previous Work (BART AND WORDTOVEC IMPROVEMENT) | Enhance and optimize previous work related to BART and Word2Vec. | 3 weeks       | Completed      | Yes      | Thursday, April 25, 2024 |
 | Research and Implement Backtracking Improvements | Focus on implementing backtracking improvements for the new project direction. Implement Threading. | 2 weeks       | Completed      | Yes      | Thursday, April 18, 2024 |
 | Integration and Testing                | Integrate all components with the new backtracking implementation and conduct testing. | 2 weeks       | Completed      | Yes      | Thursday, May 9, 2024 |
-| Code Cleanup and Submission            | Identify and implement code improvements. Comment the project for clarity and submit final version. | 1 week     | Pending        | No       | Friday, May 17, 2024 |
+| Code Cleanup and Submission            | Identify and implement code improvements. Comment the project for clarity and submit final version. | 1 week     | Complete        | Yes       | Friday, May 17, 2024 |

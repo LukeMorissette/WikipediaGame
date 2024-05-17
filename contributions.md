@@ -61,6 +61,3 @@ Benchmarking involves comparing the performance of the improved algorithm with t
 The improvements proposed in the project aim to enhance the efficiency, accuracy, and reliability of the Wikipedia Path Finder script. By integrating caching, dynamic backlinks fetching, link extraction optimization, and robust error handling, significant improvements in performance and functionality are expected.
 
 To quantify the improvements, metrics such as the reduction in API requests, decrease in execution time, and increase in path-finding accuracy can be measured and compared between the original and improved versions of the script.
-
-## Video Introduction
-A short video introduction can provide a visual overview of the project, demonstrating how the improved Wikipedia Path Finder script works and highlighting its key features and benefits. Additionally, the video can showcase sample inputs, testing procedures, benchmarking results, and comparisons between the original and improved versions of the script. This multimedia approach can effectively complement the written documentation and make a compelling case for the project's effectiveness and significance.
