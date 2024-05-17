@@ -22,7 +22,7 @@ We used ChatGPT to help us with code cleanup and debugging.
 # Notes
 We switched our method and proposal throughout the project, so this is a different project than we started with, which was different from our original proposal. 
 
-## Sample Inputs
+## Sample Input 1
 - Starting article: "Artificial intelligence"
 - Final article: "Machine learning"
 
@@ -47,15 +47,52 @@ Search took 2.8347728252410889 seconds.
 Discovered pages: 1224
 Number of discovered pages: 1227
 
-
 ```
 
 Our algorithm requires less tracking and is faster in different sample inputs such as `Artificial intelligence` and `Machine learning` as they represent common topics. 
 
-## Testing and Benchmarking
-To test the algorithm, various starting and final article pairs can be used, covering a range of topics and complexities. The algorithm's performance can be evaluated based on the time taken to find the path and the number of discovered pages.
+## Sample Input 2
+- Starting article: "Martin Wirsing"
+- Final article: "Taylor Swift"
 
-Benchmarking involves comparing the performance of the improved algorithm with the original version. Metrics such as execution time, number of API requests, and accuracy of path-finding can be compared between the two versions.
+```
+Found: https://en.wikipedia.org/wiki/King%27s_College_London
+Path found: ['https://en.wikipedia.org/wiki/Martin_Wirsing', 'https://en.wikipedia.org/wiki/University_of_Passau', 'https://en.wikipedia.org/wiki/King%27s_College_London, https://en.wikipedia.org/wiki/Taylor_Swift']
+Time taken: 5.958757162094116 seconds
+
+```
+
+Previous version ()
+
+```
+
+Martrin Wirsing to Taylor Swift: https://en.wikipedia.org/wiki/Martin_Wirsing https://en.wikipedia.org/wiki/Ludwig-Maximilians-Universität_München https://en.wikipedia.org/wiki/Konrad_Adenauer https://en.wikipedia.org/wiki/Taylor_Swift
+Search took: 224 seconds
+Discovered pages: 36676
+
+```
+
+## Sample Input 3
+- Starting article: "Julius Caesar"
+- Final article: "LeBron James"
+
+```
+Found: https://en.wikipedia.org/wiki/Laurence_Olivier
+Path found: ['https://en.wikipedia.org/wiki/Julius_Caesar', 'https://en.wikipedia.org/wiki/Marcus_Licinius_Crassus', 'https://en.wikipedia.org/wiki/Laurence_Olivier, https://en.wikipedia.org/wiki/LeBron_James']
+Time taken: 15.196425914764404 seconds
+
+```
+
+Previous version ()
+
+```
+
+Search exceeded time limit.
+Elapsed time: 500.84365010261536
+
+```
+Our algorithm shows considerable improvements in the `Martin Wirsing` and `Taylor Swift` example, and `Julius Caesar` and `LeBron James` examples
+
 
 ## Improvement Comparison
 The improvements proposed in the project aim to enhance the efficiency, accuracy, and reliability of the Wikipedia Path Finder script. By integrating caching, dynamic backlinks fetching, link extraction optimization, and robust error handling, significant improvements in performance and functionality are expected.

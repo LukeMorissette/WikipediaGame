@@ -72,16 +72,13 @@ def find_path(start_page, finish_page):
     start_time = time.time()
     name_url_part = start_page.replace(' ', '_')
     start_page = f'https://en.wikipedia.org/wiki/{name_url_part}'
-    print(start_page)
     queue = [(start_page, [start_page], 0)]
     discovered = set()
     logs = []
     backlinks = list(get_backlinks(finish_page))
-    print(backlinks[:10])
     name_url_part = finish_page.replace(' ', '_')
     finish_link = f'https://en.wikipedia.org/wiki/{name_url_part}'
     backlinks.append(finish_link)
-    print(finish_page)
 
     # Breadth-first search
     while queue:  
@@ -108,5 +105,16 @@ def find_path(start_page, finish_page):
         
 while True:
     input1 = input('Please enter your starting article: ')
-    input2 = input('Please enter your final: ')
-    find_path_threaded(input1, input2)
+    input2 = input('Please enter your final article: ')
+    
+    done_event = threading.Event()
+    
+    def find_path_threaded_with_event(start_page, finish_page, event):
+        find_path(start_page, finish_page)
+        event.set()
+    
+    thread = threading.Thread(target=find_path_threaded_with_event, args=(input1, input2, done_event))
+    thread.start()
+    
+    # Wait for the thread to complete before continuing the loop
+    done_event.wait()
