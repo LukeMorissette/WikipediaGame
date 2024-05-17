@@ -9,9 +9,10 @@
 
 ### Kevan
 - Assisted in brainstorming potential mistakes that the AI could make and proposed improvements.
-- Contributed to the development of a new backlink tracking mechanism.
+- Contributed to the main development of a new backlink tracking mechanism.
 - Implemented threading for improved efficiency.
 - Conducted testing to ensure the functionality and reliability of the script.
+- Contributed to submitting the project. 
 - Created new documentation and code cleanup. 
 
 ## AI
